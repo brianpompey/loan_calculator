@@ -27,7 +27,12 @@ def __init__(self):
     Entry(window, textvariable= self.loanAmmountVar, justify= RIGHT).grid(row=3, column=2)
 
     self.monthlyPaymentVar = StringVar()
-    
+    lblMonthlyPayment = Label(window, textvariable= self.monthlyPaymentVar).grid(row=4, column=2, sticky=E)
 
     self.totalPaymentVar = StringVar()
-    Entry(window, textvariable= self.annualInterestRateVar, justify= RIGHT).grid(row=1, column=2)
+    lblTotalPayment = Label(window, textvariable= self.monthlyPaymentVar).grid(row=5, column=2, sticky=E)
+
+
+    btComputePayment = Button(window, text= "Compute Payment", command= self.computePayment).grid(row=6, column=2, sticky=E)
+
+    window.mainloop()
